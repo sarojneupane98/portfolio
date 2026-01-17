@@ -1,0 +1,35 @@
+body {
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.resume {
+    max-width: 800px;
+    background: #fff;
+    margin: 40px auto;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin-bottom:1px;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+h2 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+ul {
+    padding-left: 20px;
+}
