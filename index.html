@@ -28,10 +28,62 @@
     <link rel="stylesheet" href="style.css">
    
     <meta name="36bfe8074ac5e3433e25ffea06c1c8add1e499d6" content="36bfe8074ac5e3433e25ffea06c1c8add1e499d6" />
+
+    <!-- Responsive Ad Positioning CSS -->
+    <style>
+        /* Mobile-First Layout (Default) */
+        body {
+            /* Adds padding at the top on mobile so your content isn't hidden under the ad */
+            padding-top: 60px; 
+        }
+
+        .ad-wrapper-left {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ad-wrapper-right {
+            /* Hiding the second ad on mobile to prevent cluttering the small screen */
+            display: none; 
+            z-index: 9999;
+        }
+
+        /* Desktop Layout (Screens wider than 768px) */
+        @media (min-width: 768px) {
+            body {
+                /* Remove the top padding on desktop */
+                padding-top: 0; 
+            }
+
+            .ad-wrapper-left, .ad-wrapper-right {
+                display: block;
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                width: auto;
+            }
+
+            .ad-wrapper-left {
+                /* Moves the left ad to the left side */
+                top: 50%;
+                left: 10px;
+            }
+
+            .ad-wrapper-right {
+                /* Displays the right ad on the right side */
+                display: block;
+                right: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
     <div class="bg-visuals">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -78,29 +130,37 @@
     </button>
 
     <script src="script.js" defer></script>
-    <script>
-(function(ffwy){
-var d = document,
-    s = d.createElement('script'),
-    l = d.currentScript || d.scripts[d.scripts.length - 1];
-s.settings = ffwy || {};
-s.src = "\/\/massivesalad.com\/bMXhVls.dhGyl\/0kYYWEcl\/CeamE9tufZPUEl\/k\/PyTtc-0wNETQgrzmMiDnUJtiN\/z_Q\/1nOZDaMWwsORQI";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-    <script>
-(function(tjv){
-var d = document,
-    s = d.createElement('script'),
-    l = d.currentScript || d.scripts[d.scripts.length - 1];
-s.settings = tjv || {};
-s.src = "\/\/massivesalad.com\/b.XEVcszdrGPlk0TYMW\/cg\/Sepm\/9uuVZ\/U\/lFkmPFTjcs0\/N-Tyg\/zHMHzWMjtdNyzjQh1sOLDnMAz\/NYwX";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
+    
+    <!-- LEFT AD CONTAINER (Appears at TOP on mobile) -->
+    <div class="ad-wrapper-left">
+        <script>
+        (function(ffwy){
+        var d = document,
+            s = d.createElement('script'),
+            l = d.currentScript || d.scripts[d.scripts.length - 1];
+        s.settings = ffwy || {};
+        s.src = "\/\/massivesalad.com\/bMXhVls.dhGyl\/0kYYWEcl\/CeamE9tufZPUEl\/k\/PyTtc-0wNETQgrzmMiDnUJtiN\/z_Q\/1nOZDaMWwsORQI";
+        s.async = true;
+        s.referrerPolicy = 'no-referrer-when-downgrade';
+        l.parentNode.insertBefore(s, l);
+        })({})
+        </script>
+    </div>
+
+    <!-- RIGHT AD CONTAINER (Hidden on mobile, appears on RIGHT on desktop) -->
+    <div class="ad-wrapper-right">
+        <script>
+        (function(tjv){
+        var d = document,
+            s = d.createElement('script'),
+            l = d.currentScript || d.scripts[d.scripts.length - 1];
+        s.settings = tjv || {};
+        s.src = "\/\/massivesalad.com\/b.XEVcszdrGPlk0TYMW\/cg\/Sepm\/9uuVZ\/U\/lFkmPFTjcs0\/N-Tyg\/zHMHzWMjtdNyzjQh1sOLDnMAz\/NYwX";
+        s.async = true;
+        s.referrerPolicy = 'no-referrer-when-downgrade';
+        l.parentNode.insertBefore(s, l);
+        })({})
+        </script>
+    </div>
 </body>
 </html>
